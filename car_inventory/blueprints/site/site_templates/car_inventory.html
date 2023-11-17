@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="container-fluid justify-content-center">
+    <div class ="row row justify-content-center shop-header p-5">
+    <!-- <div class="row shop-header p-5"> -->
+        <div class="col-3 ms-5 d-flex flex-column justify-content-center align-items-center">
+            <h2>Welcome to The Shop!</h2>
+            {% if current_user.is_authenticated %}
+            <h5>Your #1 Resource For All Things Cars</h5>
+            <a href="{{ url_for('site.create')}}" class="btn btn-outline-dark mt-3">Add New Vehicle</a>
+            {% else %}
+            <h5>Please Sign In To View Your Garage</h5>
+            <a href="/signin" class="btn btn-outline-dark mt-3">Sign In</a>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock content %}
